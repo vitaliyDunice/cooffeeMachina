@@ -18,59 +18,68 @@ class Profile {
         this.water = water;
     }
 
-public class menu4 {
-    public static HashMap<String, Profile> profiles = new HashMap<>();
-    public static HashMap<String, Profile> getProfiles() {
-        return profiles;
-    }
-    public static void nam4() {
-        Scanner scan = new Scanner(System.in);
-        boolean continueInput = true;
+    public class menu4 {
+        public static HashMap<String, Profile> profiles = new HashMap<>();
 
-        while (continueInput) {
-            System.out.println("-------------------------------------------");
-            System.out.println("Введите название профиля: ");
-            System.out.println("-------------------------------------------");
-            String name = scan.nextLine();
+        public static HashMap<String, Profile> getProfiles() {
+            return profiles;
+        }
 
-            System.out.println("-------------------------------------------");
-            System.out.println("Введите количество молока: ");
-            System.out.println("-------------------------------------------");
-            int milk = scan.nextInt();
-            if (milk > 200 || milk <= 0){
+        public static void nam4() {
+            Scanner scan = new Scanner(System.in);
+            boolean continueInput = true;
+
+            while (continueInput) {
                 System.out.println("-------------------------------------------");
-                System.out.println("Неккоректное значение");
-                menu4.nam4();}
-
-            System.out.println("-------------------------------------------");
-            System.out.println("Введите количество кофе: ");
-            System.out.println("-------------------------------------------");
-            int coffee = scan.nextInt();
-            if (coffee > 5 || coffee <= 0){
+                System.out.println("Введите название профиля: ");
                 System.out.println("-------------------------------------------");
-                System.out.println("Неккоректное значение");
-                menu4.nam4();}
+                String name = scan.nextLine();
+                if (name.trim().isEmpty()) {
+                    System.out.println("Ошибка: название профиля не должно быть пустым или состоять только из пробелов. Попробуйте снова.");
+                    menu4.nam4();}
 
-            System.out.println("-------------------------------------------");
-            System.out.println("Введите количество воды: ");
-            System.out.println("-------------------------------------------");
-            int water = scan.nextInt();
-            if (water > 200 || water <= 0 ){
-                System.out.println("-------------------------------------------");
-                System.out.println("Неккоректное значение");
-                menu4.nam4();}
+                    System.out.println("-------------------------------------------");
+                    System.out.println("Введите количество молока: макс 200мл ");
+                    System.out.println("-------------------------------------------");
+                    int milk = scan.nextInt();
+                    if (milk > 200 || milk <= 0) {
+                        System.out.println("-------------------------------------------");
+                        System.out.println("Неккоректное значение");
+                        menu4.nam4();
+                    }
 
-            scan.nextLine();
-            Profile profile = new Profile(milk, coffee, water);
-            profiles.put(name, profile);
-            System.out.println("-------------------------------------------");
-            System.out.println("Профиль создан. ");
-            System.out.println("-------------------------------------------");
-            mainMenu();
-            }
+                    System.out.println("-------------------------------------------");
+                    System.out.println("Введите количество кофе: макс 5г ");
+                    System.out.println("-------------------------------------------");
+                    int coffee = scan.nextInt();
+                    if (coffee > 5 || coffee <= 0) {
+                        System.out.println("-------------------------------------------");
+                        System.out.println("Неккоректное значение");
+                        menu4.nam4();
+                    }
+
+                    System.out.println("-------------------------------------------");
+                    System.out.println("Введите количество воды: макс 200мл");
+                    System.out.println("-------------------------------------------");
+                    int water = scan.nextInt();
+                    if (water > 200 || water <= 0) {
+                        System.out.println("-------------------------------------------");
+                        System.out.println("Неккоректное значение");
+                        menu4.nam4();
+                    }
+
+                    scan.nextLine();
+                    Profile profile = new Profile(milk, coffee, water);
+                    profiles.put(name, profile);
+                    System.out.println("-------------------------------------------");
+                    System.out.println("Профиль создан. ");
+                    System.out.println("-------------------------------------------");
+                    mainMenu();
+                }
             }
         }
     }
+
 
 
 

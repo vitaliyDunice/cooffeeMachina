@@ -45,10 +45,10 @@ public class cofemacgina {
                     log("Ошибка ввода: ");
                     System.out.println("Выберите значение от 0 до 6.");
                 }
-                if (van == ' '){
+               /* if (van == ' '){
                     log("Ошибка ввода: ");
                     System.out.println("Выберите значение от 0 до 6.");
-                }
+                }*/
             } catch (Exception e) {
                 log("Ошибка ввода: ");
                 System.out.println("Введите корректное число от 0 до 6.");
@@ -57,22 +57,22 @@ public class cofemacgina {
         }
         switch (van) {
             case 1:
-                log("Попытка выбрать готовый вариант.");
-                if (cofemacgina.coffee < 120) {
+                log("Недостаточно кофе.");
+                if (cofemacgina.coffee > 120) {
                     log("Недостаточно кофе.");
                     System.out.println("-------------------------------------------");
                     System.out.println("Что-то пошло не так! Пополните бак с кофе!");
                     System.out.println("-------------------------------------------");
                     menu3.nam3();
                 }
-                if (cofemacgina.milk < 1900) {
+                if (cofemacgina.milk > 1900) {
                     log("Недостаточно молока.");
                     System.out.println("-------------------------------------------");
                     System.out.println("Что-то пошло не так! Пополните бак с молоком!");
                     System.out.println("-------------------------------------------");
                     menu3.nam3();
                 }
-                if (cofemacgina.water < 2000) {
+                if (cofemacgina.water > 2000) {
                     log("Недостаточно воды.");
                     System.out.println("-------------------------------------------");
                     System.out.println("Что-то пошло не так! Пополните бак с водой!");
@@ -104,21 +104,21 @@ public class cofemacgina {
                 break;
             case 5:
                 log("Выбор собственного варианта.");
-                if (cofemacgina.coffee < 120) {
+                if (cofemacgina.coffee > 120) {
                     log("Недостаточно кофе.");
                     System.out.println("-------------------------------------------");
                     System.out.println("Что-то пошло не так! Пополните бак с кофе!");
                     System.out.println("-------------------------------------------");
                     menu3.nam3();
                 }
-                if (cofemacgina.milk < 1900) {
+                if (cofemacgina.milk > 1900) {
                     log("Недостаточно молока.");
                     System.out.println("-------------------------------------------");
                     System.out.println("Что-то пошло не так! Пополните бак с молоком!");
                     System.out.println("-------------------------------------------");
                     menu3.nam3();
                 }
-                if (cofemacgina.water < 2000) {
+                if (cofemacgina.water > 2000) {
                     log("Недостаточно воды.");
                     System.out.println("-------------------------------------------");
                     System.out.println("Что-то пошло не так! Пополните бак с водой!");

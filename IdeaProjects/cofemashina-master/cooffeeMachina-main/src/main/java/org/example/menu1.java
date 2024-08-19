@@ -1,6 +1,9 @@
 package org.example;
 
 import java.util.Scanner;
+
+import static java.rmi.server.LogStream.log;
+
 public class menu1 {
     public static void nam1() {
         Scanner scan = new Scanner(System.in);
@@ -22,6 +25,7 @@ public class menu1 {
         }
         switch (in) {
             case 1:
+                log("Приготовление Capuchino");
                 cofemacgina.water += Capuchino.waterRashod * con;
                 cofemacgina.coffee += Capuchino.coffeeRashod * con;
                 cofemacgina.milk += Capuchino.milkRashod * con;
@@ -32,6 +36,7 @@ public class menu1 {
                 cofemacgina.mainMenu();
                 break;
             case 2:
+                log("Приготовление Espresso");
                 cofemacgina.water += Espresso.waterRashod * con;
                 cofemacgina.coffee += Espresso.coffeeRashod * con;
                 cofemacgina.milk += Espresso.milkRashod * con;
@@ -45,6 +50,7 @@ public class menu1 {
                 cofemacgina.mainMenu();
                 break;
             default:
+                log("Вы сделали что не то!");
                 System.out.println("-------------------------------------------");
                 System.out.println("Вы сделали что не то!");
                 System.out.println("-------------------------------------------");
