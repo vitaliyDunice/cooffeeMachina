@@ -30,6 +30,7 @@ class Profile {
             boolean continueInput = true;
 
             while (continueInput) {
+
                 System.out.println("-------------------------------------------");
                 System.out.println("Введите название профиля: ");
                 System.out.println("-------------------------------------------");

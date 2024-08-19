@@ -26,7 +26,7 @@ public class menu5 {
             System.out.println("Профиль с именем " + name + " не найден.");
             System.out.println("Создайте новый профиль!");
             System.out.println("-------------------------------------------");
-            Profile.menu4.nam4();
+            cofemacgina.mainMenu();
         }
     }
 }

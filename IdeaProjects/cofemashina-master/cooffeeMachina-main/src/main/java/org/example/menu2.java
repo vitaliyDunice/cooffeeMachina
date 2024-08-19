@@ -17,42 +17,43 @@ public class menu2 {
         System.out.println("-------------------------------------------");
         System.out.println("Введите значение: ");
         byte van = scan.nextByte();
+        logi.log("Неверное значение" + van);
             if  (van > 6 | van < 1){
                 System.out.println("-------------------------------------------");
-                System.out.println("Неверное значение");
+                System.out.println("Неверное значение" + van);
                 System.out.println("-------------------------------------------");
         }
         switch (van) {
             case 1:
-               // log("Проверка зогрязнения ");
+                logi.log("Проверка зогрязнения ");
                 System.out.println("-------------------------------------------");
                 System.out.println("Загрязнено на " + cofemacgina.pollution + " из " + cofemacgina.maxPollution);
                 System.out.println("-------------------------------------------");
                 nam2();
                 break;
             case 2:
-              //  log("Наличие кофе.");
+                logi.log("Наличие кофе.");
                 System.out.println("-------------------------------------------");
                 System.out.println("Затрачено " +cofemacgina.coffee + " из " + cofemacgina.maxCoffee);
                 System.out.println("-------------------------------------------");
                 nam2();
                 break;
             case 3:
-              //  log("Наличие молока.");
+                logi.log("Наличие молока.");
                 System.out.println("-------------------------------------------");
                 System.out.println("Затрачено " + cofemacgina.milk + " из " + cofemacgina.maxMilk);
                 System.out.println("-------------------------------------------");
                 nam2();
                 break;
             case 4:
-              //  log("Наличие воды.");
+                logi.log("Наличие воды.");
                 System.out.println("-------------------------------------------");
                 System.out.println("Затрачено " + cofemacgina.water + " из " + cofemacgina.maxWater);
                 System.out.println("-------------------------------------------");
                 nam2();
                 break;
             case 5:
-              //  log("Проверка всего.");
+                logi.log("Проверка всего.");
                 System.out.println("-------------------------------------------");
                 System.out.println("Загрязнено на " + cofemacgina.pollution + " из " + cofemacgina.maxPollution);
                 System.out.println("Затрачено " +cofemacgina.coffee + " из " + cofemacgina.maxCoffee);
@@ -62,7 +63,7 @@ public class menu2 {
                 nam2();
                 break;
             case 6:
-             //   log("Возврат в меню");
+                logi.log("Возврат в меню");
                 mainMenu();
                 break;
         }

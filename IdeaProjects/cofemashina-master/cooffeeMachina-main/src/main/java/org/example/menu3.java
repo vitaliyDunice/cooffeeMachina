@@ -22,12 +22,13 @@ public class menu3  {
         switch (van) {
             case 1:
                 if (cofemacgina.pollution == 0){
+                    logi.log("Машина не требует чистки!");
                     System.out.println("-------------------------------------------");
                     System.out.println("Машина не требует чистки!");
                     System.out.println("-------------------------------------------");
                     nam3();
                 } else{
-                   // log("Машина очищена");
+                    logi.log("Машина очищена!");
                 cofemacgina.pollution = 0;
                 System.out.println("-------------------------------------------");
                 System.out.println("Машина очищена!");
@@ -36,12 +37,13 @@ public class menu3  {
                 break;}
             case 2:
                 if (cofemacgina.coffee == 0){
+                    logi.log("Бак полон!");
                     System.out.println("-------------------------------------------");
                     System.out.println("Бак полон!");
                     System.out.println("-------------------------------------------");
                     nam3();
                 } else {
-                  //  log("Кофе пополнено!");
+                    logi.log("Кофе пополнено!");
                 cofemacgina.coffee = 0;
                 System.out.println("-------------------------------------------");
                 System.out.println("Кофе пополнено!");
@@ -50,12 +52,13 @@ public class menu3  {
                 break;
             case 3:
                 if (cofemacgina.milk == 0){
+                    logi.log("Бак полон!");
                     System.out.println("-------------------------------------------");
                     System.out.println("Бак полон!");
                     System.out.println("-------------------------------------------");
                     nam3();
                 }else {
-                   // log("Молоко пополнено!");
+                    logi.log("Молоко пополнено!");
                 cofemacgina.milk = 0;
                 System.out.println("-------------------------------------------");
                 System.out.println("Молоко пополнено!");
@@ -64,12 +67,13 @@ public class menu3  {
                 break;
             case 4:
                 if (cofemacgina.water == 0){
+                    logi.log("Бак полон!");
                     System.out.println("-------------------------------------------");
                     System.out.println("Бак полон!");
                     System.out.println("-------------------------------------------");
                     nam3();
                 }else {
-                  //  log("Вода пополнена!");
+                    logi.log("Вода пополнена!");
                 cofemacgina.water = 0;
                 System.out.println("-------------------------------------------");
                 System.out.println("Вода пополнена!");
@@ -78,13 +82,14 @@ public class menu3  {
                 break;
             case 5:
                 if ((cofemacgina.milk == 0) | (cofemacgina.water == 0) | (cofemacgina.coffee == 0) | (cofemacgina.pollution == 0)){
+                    logi.log("Пополнение не нужно!");
             System.out.println("-------------------------------------------");
             System.out.println("Пополнение не нужно!");
             System.out.println("-------------------------------------------");
             mainMenu();
                 }
                 else {
-                  //  log("Пополнение выполнено!");
+                    logi.log("Пополнение выполнено!");
                     cofemacgina.pollution = 0;
                     cofemacgina.coffee = 0;
                     cofemacgina.milk = 0;
@@ -95,6 +100,7 @@ public class menu3  {
                     mainMenu();
                 }
             case 6:
+                logi.log("Возврат в меню!");
                 mainMenu();
                 break;
         }

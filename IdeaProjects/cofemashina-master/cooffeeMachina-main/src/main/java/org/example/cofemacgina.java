@@ -1,11 +1,8 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class cofemacgina {
-    private static List<String> logMessages = new ArrayList<>();
     public static int coffee;
     public static int maxCoffee = 150;
     public static int milk;
@@ -15,18 +12,10 @@ public class cofemacgina {
     public static int pollution;
     public static int maxPollution = 150;
 
-    private static void log(String message) {
-        logMessages.add(message);
-    }
-
-    public static List<String> getLogMessages() {
-        return new ArrayList<>(logMessages);
-    }
-
     public static void mainMenu() {
 
         Scanner scan = new Scanner(System.in);
-        log("Открыто главное меню.");
+        logi.log("Открыто главное меню.");
         byte van = -1;
         while (van < 0 || van > 6) {
             System.out.println("-------------------------------------------");
@@ -42,105 +31,101 @@ public class cofemacgina {
             try {
                 van = scan.nextByte();
                 if (van < 0 || van > 6) {
-                    log("Ошибка ввода: ");
+                    logi.log("Ошибка ввода: ");
                     System.out.println("Выберите значение от 0 до 6.");
                 }
-               /* if (van == ' '){
-                    log("Ошибка ввода: ");
-                    System.out.println("Выберите значение от 0 до 6.");
-                }*/
             } catch (Exception e) {
-                log("Ошибка ввода: ");
+                logi.log("Ошибка ввода: ");
                 System.out.println("Введите корректное число от 0 до 6.");
                 scan.next();
             }
         }
         switch (van) {
             case 1:
-                log("Недостаточно кофе.");
+                logi.log("Недостаточно кофе.");
                 if (cofemacgina.coffee > 120) {
-                    log("Недостаточно кофе.");
+                    logi.getLogMessages();
                     System.out.println("-------------------------------------------");
                     System.out.println("Что-то пошло не так! Пополните бак с кофе!");
                     System.out.println("-------------------------------------------");
                     menu3.nam3();
                 }
                 if (cofemacgina.milk > 1900) {
-                    log("Недостаточно молока.");
+                    logi.log("Недостаточно молока.");
                     System.out.println("-------------------------------------------");
                     System.out.println("Что-то пошло не так! Пополните бак с молоком!");
                     System.out.println("-------------------------------------------");
                     menu3.nam3();
                 }
                 if (cofemacgina.water > 2000) {
-                    log("Недостаточно воды.");
+                    logi.log("Недостаточно воды.");
                     System.out.println("-------------------------------------------");
                     System.out.println("Что-то пошло не так! Пополните бак с водой!");
                     System.out.println("-------------------------------------------");
                     menu3.nam3();
                 }
                 if (cofemacgina.pollution > 140) {
-                    log("Необходимо очистить кофемашину.");
+                    logi.log("Необходимо очистить кофемашину.");
                     System.out.println("-------------------------------------------");
                     System.out.println("Что-то пошло не так! Очистите кофемашину!");
                     System.out.println("-------------------------------------------");
                     menu3.nam3();
                 } else {
-                    log("Приготовление напитка.");
+                    logi.log("Приготовление напитка.");
                     menu1.nam1();
                 }
                 break;
             case 2:
-                log("Проверка наличия ингредиентов.");
+                logi.log("Проверка наличия ингредиентов.");
                 menu2.nam2();
                 break;
             case 3:
-                log("Пополнение ингредиентов.");
+                logi.log("Пополнение ингредиентов.");
                 menu3.nam3();
                 break;
             case 4:
-                log("Создание собственного варианта.");
+                logi.log("Создание собственного варианта.");
                 Profile.menu4.nam4();
                 break;
             case 5:
-                log("Выбор собственного варианта.");
+                logi.log("Выбор собственного варианта.");
                 if (cofemacgina.coffee > 120) {
-                    log("Недостаточно кофе.");
+                    logi.getLogMessages();
                     System.out.println("-------------------------------------------");
                     System.out.println("Что-то пошло не так! Пополните бак с кофе!");
                     System.out.println("-------------------------------------------");
                     menu3.nam3();
                 }
                 if (cofemacgina.milk > 1900) {
-                    log("Недостаточно молока.");
+                    logi.log("Недостаточно молока.");
                     System.out.println("-------------------------------------------");
                     System.out.println("Что-то пошло не так! Пополните бак с молоком!");
                     System.out.println("-------------------------------------------");
                     menu3.nam3();
                 }
                 if (cofemacgina.water > 2000) {
-                    log("Недостаточно воды.");
+                    logi.log("Недостаточно воды.");
                     System.out.println("-------------------------------------------");
                     System.out.println("Что-то пошло не так! Пополните бак с водой!");
                     System.out.println("-------------------------------------------");
                     menu3.nam3();
                 }
                 if (cofemacgina.pollution > 140) {
-                    log("Необходимо очистить кофемашину.");
+                    logi.log("Необходимо очистить кофемашину.");
                     System.out.println("-------------------------------------------");
                     System.out.println("Что-то пошло не так! Очистите кофемашину!");
                     System.out.println("-------------------------------------------");
                     menu3.nam3();
                 } else {
-                    log("Приготовление своегонапитка.");
+                    logi.log("Приготовление своегонапитка.");
                     menu5.nam5();
                     break;
                 }case 6:
-                log("Выбор просмотр логов.");
+                logi.log("Выбор просмотр логов.");
                 menu6.nam6();
                 break;
             case 0:
-                log("Выключение кофемашины.");
+                logi.log("Выключение кофемашины.");
                 System.out.println("Кофемашина выключена.");
                 break;
         }
