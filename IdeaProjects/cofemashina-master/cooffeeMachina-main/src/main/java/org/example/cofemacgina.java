@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class cofemacgina {
-    private static final List<String> logMessages = new ArrayList<>();
+    private static List<String> logMessages = new ArrayList<>();
     public static int coffee;
     public static int maxCoffee = 150;
     public static int milk;
@@ -19,8 +19,6 @@ public class cofemacgina {
         logMessages.add(message);
     }
 
-    @org.jetbrains.annotations.NotNull
-    @org.jetbrains.annotations.Contract(value = " -> new", pure = true)
     public static List<String> getLogMessages() {
         return new ArrayList<>(logMessages);
     }
