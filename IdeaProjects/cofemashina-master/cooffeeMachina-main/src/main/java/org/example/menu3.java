@@ -2,7 +2,6 @@ package org.example;
 
 import java.util.Scanner;
 
-import static java.rmi.server.LogStream.log;
 import static org.example.cofemacgina.mainMenu;
 
 public class menu3  {
@@ -28,7 +27,7 @@ public class menu3  {
                     System.out.println("-------------------------------------------");
                     nam3();
                 } else{
-                    log("Машина очищена");
+                   // log("Машина очищена");
                 cofemacgina.pollution = 0;
                 System.out.println("-------------------------------------------");
                 System.out.println("Машина очищена!");
@@ -42,7 +41,7 @@ public class menu3  {
                     System.out.println("-------------------------------------------");
                     nam3();
                 } else {
-                    log("Кофе пополнено!");
+                  //  log("Кофе пополнено!");
                 cofemacgina.coffee = 0;
                 System.out.println("-------------------------------------------");
                 System.out.println("Кофе пополнено!");
@@ -56,7 +55,7 @@ public class menu3  {
                     System.out.println("-------------------------------------------");
                     nam3();
                 }else {
-                    log("Молоко пополнено!");
+                   // log("Молоко пополнено!");
                 cofemacgina.milk = 0;
                 System.out.println("-------------------------------------------");
                 System.out.println("Молоко пополнено!");
@@ -70,7 +69,7 @@ public class menu3  {
                     System.out.println("-------------------------------------------");
                     nam3();
                 }else {
-                    log("Вода пополнена!");
+                  //  log("Вода пополнена!");
                 cofemacgina.water = 0;
                 System.out.println("-------------------------------------------");
                 System.out.println("Вода пополнена!");
@@ -85,7 +84,7 @@ public class menu3  {
             mainMenu();
                 }
                 else {
-                    log("Пополнение выполнено!");
+                  //  log("Пополнение выполнено!");
                     cofemacgina.pollution = 0;
                     cofemacgina.coffee = 0;
                     cofemacgina.milk = 0;

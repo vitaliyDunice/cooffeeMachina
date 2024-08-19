@@ -19,6 +19,8 @@ public class cofemacgina {
         logMessages.add(message);
     }
 
+    @org.jetbrains.annotations.NotNull
+    @org.jetbrains.annotations.Contract(value = " -> new", pure = true)
     public static List<String> getLogMessages() {
         return new ArrayList<>(logMessages);
     }

@@ -1,9 +1,7 @@
 package org.example;
 
-import java.util.HashMap;
 import java.util.Scanner;
 
-import static java.rmi.server.LogStream.log;
 import static org.example.cofemacgina.mainMenu;
 
 public class menu2 {
@@ -26,35 +24,35 @@ public class menu2 {
         }
         switch (van) {
             case 1:
-                log("Проверка зогрязнения ");
+               // log("Проверка зогрязнения ");
                 System.out.println("-------------------------------------------");
                 System.out.println("Загрязнено на " + cofemacgina.pollution + " из " + cofemacgina.maxPollution);
                 System.out.println("-------------------------------------------");
                 nam2();
                 break;
             case 2:
-                log("Наличие кофе.");
+              //  log("Наличие кофе.");
                 System.out.println("-------------------------------------------");
                 System.out.println("Затрачено " +cofemacgina.coffee + " из " + cofemacgina.maxCoffee);
                 System.out.println("-------------------------------------------");
                 nam2();
                 break;
             case 3:
-                log("Наличие молока.");
+              //  log("Наличие молока.");
                 System.out.println("-------------------------------------------");
                 System.out.println("Затрачено " + cofemacgina.milk + " из " + cofemacgina.maxMilk);
                 System.out.println("-------------------------------------------");
                 nam2();
                 break;
             case 4:
-                log("Наличие воды.");
+              //  log("Наличие воды.");
                 System.out.println("-------------------------------------------");
                 System.out.println("Затрачено " + cofemacgina.water + " из " + cofemacgina.maxWater);
                 System.out.println("-------------------------------------------");
                 nam2();
                 break;
             case 5:
-                log("Проверка всего.");
+              //  log("Проверка всего.");
                 System.out.println("-------------------------------------------");
                 System.out.println("Загрязнено на " + cofemacgina.pollution + " из " + cofemacgina.maxPollution);
                 System.out.println("Затрачено " +cofemacgina.coffee + " из " + cofemacgina.maxCoffee);
@@ -64,7 +62,7 @@ public class menu2 {
                 nam2();
                 break;
             case 6:
-                log("Возврат в меню");
+             //   log("Возврат в меню");
                 mainMenu();
                 break;
         }
