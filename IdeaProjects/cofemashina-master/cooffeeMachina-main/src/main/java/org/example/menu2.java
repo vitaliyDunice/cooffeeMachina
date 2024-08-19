@@ -17,8 +17,8 @@ public class menu2 {
         System.out.println("-------------------------------------------");
         System.out.println("Введите значение: ");
         byte van = scan.nextByte();
-        logi.log("Неверное значение" + van);
             if  (van > 6 | van < 1){
+                logi.log("Неверное значение " + van);
                 System.out.println("-------------------------------------------");
                 System.out.println("Неверное значение" + van);
                 System.out.println("-------------------------------------------");

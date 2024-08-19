@@ -42,9 +42,9 @@ public class cofemacgina {
         }
         switch (van) {
             case 1:
-                logi.log("Недостаточно кофе.");
                 if (cofemacgina.coffee > 120) {
                     logi.getLogMessages();
+                    logi.log("Недостаточно кофе.");
                     System.out.println("-------------------------------------------");
                     System.out.println("Что-то пошло не так! Пополните бак с кофе!");
                     System.out.println("-------------------------------------------");
@@ -88,9 +88,8 @@ public class cofemacgina {
                 Profile.menu4.nam4();
                 break;
             case 5:
-                logi.log("Выбор собственного варианта.");
                 if (cofemacgina.coffee > 120) {
-                    logi.getLogMessages();
+                    logi.log("Выбор собственного варианта.");
                     System.out.println("-------------------------------------------");
                     System.out.println("Что-то пошло не так! Пополните бак с кофе!");
                     System.out.println("-------------------------------------------");
