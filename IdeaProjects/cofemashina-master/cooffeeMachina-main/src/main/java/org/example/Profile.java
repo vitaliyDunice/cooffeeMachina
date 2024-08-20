@@ -1,86 +1,78 @@
 package org.example;
 
-
-import java.util.Scanner;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
-import static org.example.cofemacgina.mainMenu;
-
-class Profile {
+public class Profile {
     String name;
     int milk;
     int coffee;
     int water;
 
-    public Profile(int milk, int coffee, int water) {
+    public Profile(String name, int milk, int coffee, int water) {
+        this.name = name;
         this.milk = milk;
         this.coffee = coffee;
         this.water = water;
     }
+    public static class menu4 {
+        private static final Map<String, Profile> profiles = new HashMap<>();
+        private static final Scanner scan = new Scanner(System.in);
 
-    public class menu4 {
-        public static HashMap<String, Profile> profiles = new HashMap<>();
-
-        public static HashMap<String, Profile> getProfiles() {
+        public static Map<String, Profile> getProfiles() {
             return profiles;
         }
-
         public static void nam4() {
-            Scanner scan = new Scanner(System.in);
-            boolean continueInput = true;
+            String name;
+            int milk;
+            int coffee;
+            int water;
 
-            while (continueInput) {
-
+            while (true) {
                 System.out.println("-------------------------------------------");
                 System.out.println("Введите название профиля: ");
                 System.out.println("-------------------------------------------");
-                String name = scan.nextLine();
-                if (name.trim().isEmpty()) {
-                    System.out.println("Ошибка: название профиля не должно быть пустым или состоять только из пробелов. Попробуйте снова.");
-                    menu4.nam4();}
+                name = scan.nextLine().trim();
+                if (!name.isEmpty()) {
+                    break;
+                }
+                System.out.println("Ошибка: название профиля не должно быть пустым или состоять только из пробелов. Попробуйте снова.");
+            }
 
-                    System.out.println("-------------------------------------------");
-                    System.out.println("Введите количество молока: макс 200мл ");
-                    System.out.println("-------------------------------------------");
-                    int milk = scan.nextInt();
-                    if (milk > 200 || milk <= 0) {
-                        System.out.println("-------------------------------------------");
-                        System.out.println("Неккоректное значение");
-                        menu4.nam4();
+            milk = getValidInt("Введите количество молока: макс 200мл ", 0, 200);
+            coffee = getValidInt("Введите количество кофе: макс 5г ", 0, 5);
+            water = getValidInt("Введите количество воды: макс 200мл ", 0, 200);
+            Profile profile = new Profile(name, milk, coffee, water);
+            profiles.put(name, profile);
+
+            System.out.println("-------------------------------------------");
+            System.out.println("Профиль создан.");
+            System.out.println("-------------------------------------------");
+            cofemacgina.mainMenu();
+        }
+
+        private static int getValidInt(String prompt, int min, int max) {
+            int value;
+            while (true) {
+                System.out.println("-------------------------------------------");
+                System.out.println(prompt);
+                System.out.println("-------------------------------------------");
+                if (scan.hasNextInt()) {
+                    value = scan.nextInt();
+                    if (value >= min && value <= max) {
+                        scan.nextLine();
+                    } else {
+                        System.out.println("Некорректное значение, попробуйте снова.");
                     }
-
-                    System.out.println("-------------------------------------------");
-                    System.out.println("Введите количество кофе: макс 5г ");
-                    System.out.println("-------------------------------------------");
-                    int coffee = scan.nextInt();
-                    if (coffee > 5 || coffee <= 0) {
-                        System.out.println("-------------------------------------------");
-                        System.out.println("Неккоректное значение");
-                        menu4.nam4();
-                    }
-
-                    System.out.println("-------------------------------------------");
-                    System.out.println("Введите количество воды: макс 200мл");
-                    System.out.println("-------------------------------------------");
-                    int water = scan.nextInt();
-                    if (water > 200 || water <= 0) {
-                        System.out.println("-------------------------------------------");
-                        System.out.println("Неккоректное значение");
-                        menu4.nam4();
-                    }
-
-                    scan.nextLine();
-                    Profile profile = new Profile(milk, coffee, water);
-                    profiles.put(name, profile);
-                    System.out.println("-------------------------------------------");
-                    System.out.println("Профиль создан. ");
-                    System.out.println("-------------------------------------------");
-                    mainMenu();
+                } else {
+                    System.out.println("Ошибка: введите корректное числовое значение.");
+                    scan.next();
                 }
             }
         }
     }
-
+}
 
 
 
