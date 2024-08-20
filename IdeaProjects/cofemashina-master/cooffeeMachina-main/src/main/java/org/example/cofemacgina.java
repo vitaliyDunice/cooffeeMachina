@@ -118,7 +118,7 @@ public class cofemacgina {
                         System.out.println("-------------------------------------------");
                         menu3.nam3();
                     } else {
-                        logi.log("Приготовление своегонапитка.");
+                        logi.log("Приготовление своего напитка.");
                         menu5.nam5();
                         break;
                     }

@@ -40,9 +40,9 @@ public class Profile {
                 System.out.println("Ошибка: название профиля не должно быть пустым или состоять только из пробелов. Попробуйте снова.");
             }
 
-            milk = getValidInt("Введите количество молока: макс 200мл ", 0, 200);
-            coffee = getValidInt("Введите количество кофе: макс 5г ", 0, 5);
-            water = getValidInt("Введите количество воды: макс 200мл ", 0, 200);
+            milk = getValidInt("Введите количество молока: макс 200мл ", -1, 200);
+            coffee = getValidInt("Введите количество кофе: макс 5г ", 1, 5);
+            water = getValidInt("Введите количество воды: мин 50 макс 200мл ", 50, 200);
             Profile profile = new Profile(name, milk, coffee, water);
             profiles.put(name, profile);
 
@@ -60,14 +60,15 @@ public class Profile {
                 System.out.println("-------------------------------------------");
                 if (scan.hasNextInt()) {
                     value = scan.nextInt();
+                    scan.nextLine(); // Очищаем буфер ввода после считывания числа
                     if (value >= min && value <= max) {
-                        scan.nextLine();
+                        return value;
                     } else {
                         System.out.println("Некорректное значение, попробуйте снова.");
                     }
                 } else {
                     System.out.println("Ошибка: введите корректное числовое значение.");
-                    scan.next();
+                    scan.next(); // Очищаем некорректный ввод
                 }
             }
         }
