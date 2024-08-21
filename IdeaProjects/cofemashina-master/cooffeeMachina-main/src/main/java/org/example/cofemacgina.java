@@ -87,7 +87,7 @@ public class cofemacgina {
                     break;
                 case 4:
                     logi.log("Создание собственного варианта.");
-                    Profile.menu4.nam4();
+                    menu4.nam4();
                     break;
                 case 5:
                     if (cofemacgina.coffee > 120) {

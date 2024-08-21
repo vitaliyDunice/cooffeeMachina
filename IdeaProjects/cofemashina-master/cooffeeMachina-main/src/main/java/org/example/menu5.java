@@ -7,7 +7,7 @@ public class menu5 {
         Scanner scan = new Scanner(System.in);
         System.out.println("Введите название профиля: ");
         String name = scan.nextLine().trim();
-        Profile profile = Profile.menu4.getProfiles().get(name);
+        Profile profile = menu4.getProfiles().get(name);
         if (profile != null) {
             cofemacgina.milk += profile.milk;
             cofemacgina.coffee += profile.coffee;
